@@ -41,5 +41,6 @@
 19. 删表：`delete from [表名];`
 20. 建表：`create table ([字段名1] [类型1] ;,[字段名2] [类型2],......<,primary key (字段名m,字段名n,...)>;);`
 21. 创建用户：`createuser username`
+22. 使用pgAdmin图形化工具操作pgsql
 
 
