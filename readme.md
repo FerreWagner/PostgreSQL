@@ -71,29 +71,35 @@ ORDER BY column1, column2`
 		右外连接(RIGHT OUTER JOIN)
 		全连接(FULL OUTER JOIN)
 		跨连接(CROSS JOIN)
+
 <br />
 
-			内连接：即两表拥有共同的数据：
-			SELECT MY.ID, MY.NAME, YOUR.AGE  
-			FROM MY   
-			INNER JOIN YOUR  
-			ON MY.ID = YOUR.ID;
-	
-			左外连接：即查询某表拥有单另表不一定有的数据：
-			SELECT MY.ID, MY.NAME, YOUR.AGE  
-			FROM MY 
-			LEFT OUTER JOIN YOUR  
-			ON MY.ID = YOUR.ID;
-	
-			右外连接：即查询某表拥有单另表不一定有的数据：（不一样的是，右外 查询的是YOUR表拥有而MY表不一定拥有的数据）
-			SELECT MY.ID, MY.NAME, YOUR.AGE  
-			FROM MY 
-			RIGHT OUTER JOIN YOUR  
-			ON MY.ID = YOUR.ID;
-	
-	
-			全外连接：即满足条件的两表的所有数据：
-			SELECT MY.ID, MY.NAME, YOUR.AGE  
-			FROM MY 
-			FULL OUTER JOIN YOUR  
-			ON MY.ID = YOUR.ID;
+		内连接：即两表拥有共同的数据：
+		SELECT MY.ID, MY.NAME, YOUR.AGE  
+		FROM MY   
+		INNER JOIN YOUR  
+		ON MY.ID = YOUR.ID;
+
+		左外连接：即查询某表拥有单另表不一定有的数据：
+		SELECT MY.ID, MY.NAME, YOUR.AGE  
+		FROM MY 
+		LEFT OUTER JOIN YOUR  
+		ON MY.ID = YOUR.ID;
+
+		右外连接：即查询某表拥有单另表不一定有的数据：（不一样的是，右外 查询的是YOUR表拥有而MY表不一定拥有的数据）
+		SELECT MY.ID, MY.NAME, YOUR.AGE  
+		FROM MY 
+		RIGHT OUTER JOIN YOUR  
+		ON MY.ID = YOUR.ID;
+
+
+		全外连接：即满足条件的两表的所有数据：
+		SELECT MY.ID, MY.NAME, YOUR.AGE  
+		FROM MY 
+		FULL OUTER JOIN YOUR  
+		ON MY.ID = YOUR.ID;
+
+		跨连接：将第一个表的每一行与第二个表的每一行相匹配。 它也被称为笛卡儿积分。 如果table1具有“x”列，而table2具有“y”列，则所得到的表将具有(x + y)列
+		SELECT NAME, AGE 
+		FROM MY  
+		CROSS JOIN YOUR;
