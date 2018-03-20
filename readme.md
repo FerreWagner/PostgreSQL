@@ -1,6 +1,7 @@
 # How To Use PostgreSQL?
 
 <br />
+
 ## 一：使用PHP初探pgsql（环境相关配置） ##
 
 	这里主要对PHP在win下环境做测试
@@ -17,11 +18,12 @@
 4. 使用PHP连接数据库，和大多数主流数据库相同，描述host、port。dbname、userinfo信息即可连接数据库。具体连接方式见 link.php
 
 <br />
+
 ## 二：基本操作 ##
 
 	pgsql基础操作，如：切换数据库、数据表，建表等，一切均在dos和web下运行
 1. 在dos下连接数据库，如同MySQL：`psql -U postgres -d postgres`，提示用户postgres的口令（即密码）：xxxxxx（TIPS：第一个postgres为用户名）
-2. 列出所有数据库：`\i` 
+2. 列出所有数据库：`\l` 
 3. 切换数据库：`\c dbname` 
 4. 列举表：`\dt` 
 5. 查看表结构：`\d tbname`
@@ -43,4 +45,55 @@
 21. 创建用户：`createuser username`
 22. 使用pgAdmin图形化工具操作pgsql
 
+<br />
 
+## 三：pgsql查询 ##
+1. 排序 order by： `SELECT column-list  
+FROM table_name  
+[WHERE condition]  
+[ORDER BY column1, column2, .. columnN] [ASC | DESC];`
+2. 分组 group by： `SELECT column-list  
+FROM table_name  
+WHERE [conditions]  
+GROUP BY column1, column2..  
+ORDER BY column1, column2..`
+3. 筛选经过group by后的数据 having： `SELECT column1, column2  
+FROM table1, table2  
+WHERE [ conditions ]  
+GROUP BY column1, column2  
+HAVING [ conditions ]  
+ORDER BY column1, column2`
+4. 条件查询：`AND | OR | AND & OR | NOT | LIKE | IN | NOT IN | BETWEEN `
+5. 连接：在PostgreSQL中，有以下类型的连接：
+
+		内连接(INNER JOIN)
+		左外连接(LEFT OUTER JOIN)
+		右外连接(RIGHT OUTER JOIN)
+		全连接(FULL OUTER JOIN)
+		跨连接(CROSS JOIN)
+<br />
+
+		内连接：即两表拥有共同的数据：
+		SELECT MY.ID, MY.NAME, YOUR.AGE  
+		FROM MY   
+		INNER JOIN YOUR  
+		ON MY.ID = YOUR.ID;
+
+		左外连接：即查询某表拥有单另表不一定有的数据：
+		SELECT MY.ID, MY.NAME, YOUR.AGE  
+		FROM MY 
+		LEFT OUTER JOIN YOUR  
+		ON MY.ID = YOUR.ID;
+
+		右外连接：即查询某表拥有单另表不一定有的数据：（不一样的是，右外 查询的是YOUR表拥有而MY表不一定拥有的数据）
+		SELECT MY.ID, MY.NAME, YOUR.AGE  
+		FROM MY 
+		RIGHT OUTER JOIN YOUR  
+		ON MY.ID = YOUR.ID;
+
+
+		全外连接：即满足条件的两表的所有数据：
+		SELECT MY.ID, MY.NAME, YOUR.AGE  
+		FROM MY 
+		FULL OUTER JOIN YOUR  
+		ON MY.ID = YOUR.ID;
