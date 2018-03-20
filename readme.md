@@ -1,6 +1,7 @@
 # How To Use PostgreSQL?
 
 <br />
+
 ## 一：使用PHP初探pgsql（环境相关配置） ##
 
 	这里主要对PHP在win下环境做测试
@@ -17,6 +18,7 @@
 4. 使用PHP连接数据库，和大多数主流数据库相同，描述host、port。dbname、userinfo信息即可连接数据库。具体连接方式见 link.php
 
 <br />
+
 ## 二：基本操作 ##
 
 	pgsql基础操作，如：切换数据库、数据表，建表等，一切均在dos和web下运行
