@@ -103,3 +103,8 @@ ORDER BY column1, column2`
 		SELECT NAME, AGE 
 		FROM MY  
 		CROSS JOIN YOUR;
+
+
+TIPS1：在pgsql中，`character(n), char(n)`为定长，不足补白，`character varying(n), varchar(n)`为变长，有长度限制，在选型时请注意
+
+TIPS2:在建表后，请使用seq对主键进行手动自增功能添加（如果你需要让主键自增的话）。
