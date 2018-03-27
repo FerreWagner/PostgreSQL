@@ -108,3 +108,13 @@ ORDER BY column1, column2`
 TIPS1：在pgsql中，`character(n), char(n)`为定长，不足补白，`character varying(n), varchar(n)`为变长，有长度限制，在选型时请注意
 
 TIPS2:在建表后，请使用seq对主键进行手动自增功能添加（如果你需要让主键自增的话）。
+
+# 参考文献#
+
+
+- [linux(centos6) 下安装 postgresql-9.3.1.tar.gz](https://www.cnblogs.com/linhp/p/6530886.html "参考1")
+
+- [configure: error: Cannot find libpq-fe.h. Please specify correct PostgreSQL installation path](https://blog.csdn.net/cookie_1030/article/details/48827597 "参考2")
+
+
+- [centos下安装php的PDO PostgreSQL扩展](http://www.eduyo.com/server/linux/674.html "参考3")
